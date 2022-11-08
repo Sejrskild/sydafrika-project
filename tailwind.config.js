@@ -7,6 +7,10 @@ module.exports = {
         montserrat: ["Montserrat"],
         lato: ["Lato"],
         garamond: ["Garamond"],
+        manrope: ["Manrope", "sans-serif"],
+      },
+      backgroundImage: {
+        hero: "url('https://wallpapercave.com/wp/wp2459791.jpg')",
       },
     },
     // that is animation class

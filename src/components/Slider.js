@@ -1,121 +1,86 @@
 import React from "react";
-import { Carousel } from "react-carousel-minimal";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 function Slider() {
-  const data = [
+  const images = [
     {
-      image: "https://i.ibb.co/0yMDGNP/img1.jpg",
-      caption: "Billede af øvre del af terassen",
+      original: "https://syafrika.imgix.net/img1.jpeg?auto=compress",
+      description: "Billede af øvre del af terassen",
     },
     {
-      image: "https://i.ibb.co/gVM8Hn1/img2.jpg",
-      caption: "Billede af øvre del af terassen",
+      original: "https://syafrika.imgix.net/img2.jpeg?auto=compress",
+      description: "Billede af øvre del af terassen",
     },
     {
-      image: "https://i.ibb.co/yBNnd96/img3.jpg",
-      caption: "Nedre terasse med udsigt samt pool",
+      original: "https://syafrika.imgix.net/img3.jpeg?auto=compress",
+      description: "Nedre terasse med udsigt samt pool",
     },
     {
-      image: "https://i.ibb.co/bPZLbFP/img4.jpg",
-      caption: "Hyggestue",
+      original: "https://syafrika.imgix.net/img4.jpeg?auto=compress",
+      description: "Hyggestue",
     },
     {
-      image: "https://i.ibb.co/L5m5nB9/img5.jpg",
-      caption: "Nyt køkken",
+      original: "https://syafrika.imgix.net/img5.jpeg?auto=compress",
+      description: "Nyt køkken",
     },
     {
-      image: "https://i.ibb.co/tpZr1zV/img6.jpg",
-      caption: "Nyt køkken",
+      original: "https://syafrika.imgix.net/img6.jpeg?auto=compress",
+      description: "Nyt køkken",
     },
     {
-      image: "https://i.ibb.co/tsBtdWp/img7.jpg",
-      caption: "Gang til master bedroom (Nordlige del af huset)",
+      original: "https://syafrika.imgix.net/img7.jpeg?auto=compress",
+      description: "Gang til master bedroom (Nordlige del af huset)",
     },
     {
-      image: "https://i.ibb.co/HzWyy0n/img8.jpg",
-      caption: "Hyggeligt grillområde foran huset",
+      original: "https://syafrika.imgix.net/img8.jpeg?auto=compress",
+      description: "Hyggeligt grillområde foran huset",
     },
     {
-      image: "https://i.ibb.co/nbMKFNh/img9.jpg",
-      caption: "Bad samt toilet tilhørende master bedroom",
+      original: "https://syafrika.imgix.net/img9.jpeg?auto=compress",
+      description: "Bad samt toilet tilhørende master bedroom",
     },
     {
-      image: "https://i.ibb.co/syykSj8/img10.jpg",
-      caption: "Seng i master bedroom med udgang til terrasse",
+      original: "https://syafrika.imgix.net/img10.jpeg?auto=compress",
+      description: "Seng i master bedroom med udgang til terrasse",
     },
     {
-      image: "https://i.ibb.co/dPh148j/img11.jpg",
-      caption: "Master bedroom",
+      original: "https://syafrika.imgix.net/img11.jpeg?auto=compress",
+      description: "Master bedroom",
     },
     {
-      image: "https://i.ibb.co/0hf7CZv/img12.jpg",
-      caption: "Master bedroom",
+      original: "https://syafrika.imgix.net/img12.jpeg?auto=compress",
+      description: "Master bedroom",
     },
     {
-      image: "https://i.ibb.co/XkS65pZ/img13.jpg",
-      caption: "Gæsteværelse med udgang til terrasse",
+      original: "https://syafrika.imgix.net/img13.jpeg?auto=compress",
+      description: "Gæsteværelse med udgang til terrasse",
     },
     {
-      image: "https://i.ibb.co/mRYbP03/img15.jpg",
-      caption: "Gæsteværelse hængekøje",
+      original: "https://syafrika.imgix.net/img14.jpeg?auto=compress",
+      description: "Gæsteværelse hængekøje",
     },
     {
-      image: "https://i.ibb.co/8sR3rhq/img14.jpg",
-      caption: "Master bedroom",
+      original: "https://syafrika.imgix.net/img15.jpeg?auto=compress",
+      description: "Master bedroom",
     },
     {
-      image: "https://i.ibb.co/VNV2LFy/img17.jpg",
-      caption: "Hoveddør til huset, samt garagen i højre side af billedet",
+      original: "https://syafrika.imgix.net/img16.jpeg?auto=compress",
+      description: "Hoveddør til huset, samt garagen i højre side af billedet",
     },
     {
-      image: "https://i.ibb.co/khxx6DZ/img18.jpg",
-      caption: "Udsigt fra terassen",
+      original: "https://syafrika.imgix.net/img17.jpeg?auto=compress",
+      description: "Udsigt fra terassen",
     },
     {
-      image: "https://i.ibb.co/MNqBdJK/img19.jpg",
-      caption: "Billede af huset nedefra terassen",
+      original: "https://syafrika.imgix.net/img18.jpeg?auto=compress",
+      description: "Billede af huset nedefra terassen",
     },
   ];
 
-  const captionStyle = {
-    fontSize: "2em",
-    fontWeight: "bold",
-  };
-  const slideNumberStyle = {
-    fontSize: "20px",
-    fontWeight: "bold",
-  };
-
   return (
     <>
-      <main>
-        <div className="flex justify-center items-center">
-          <div className="flex flex-col justify-center items-center md:h-full md:w-full">
-            <Carousel
-              data={data}
-              width="1050px"
-              height="500px"
-              captionStyle={captionStyle}
-              radius="10px"
-              slideNumber={true}
-              slideNumberStyle={slideNumberStyle}
-              captionPosition="bottom"
-              pauseIconColor="white"
-              pauseIconSize="40px"
-              slideBackgroundColor="darkgrey"
-              slideImageFit="cover"
-              thumbnails={true}
-              thumbnailWidth="100px"
-              style={{
-                textAlign: "center",
-                maxWidth: "850px",
-                maxHeight: "500px",
-                margin: "40px auto",
-              }}
-            ></Carousel>
-          </div>
-        </div>
-      </main>
+      <ImageGallery items={images} lazyLoad={true} showThumbnails={false} />
     </>
   );
 }

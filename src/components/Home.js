@@ -3,29 +3,71 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <main className="h-[70vh]">
-      <div className="flex flex-col justify-center items-center h-full relative">
+    <div className="relative pt-48 pb-12 bg-black xl:pt-60 sm:pb-16 lg:pb-32 xl:pb-48 2xl:pb-56">
+      <div className="absolute inset-0">
+        {/* dark opacity layer */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <img
-          src="https://rhin-blog-production.s3.eu-west-1.amazonaws.com/wp-content/uploads/2016/03/Elephant-In-Front-Mt-Kilimanjaro-Wide-Angle.jpg"
-          alt="home"
-          className="h-full w-full object-cover"
+          className="object-cover w-full h-full"
+          src="https://images6.alphacoders.com/598/598770.jpg"
+          alt=""
         />
-        <div className="absolute w-full h-full bg-black opacity-20"></div>
-        <div className="absolute w-full h-full flex flex-col pt-[7%] items-center">
-          <div className="text-5xl text-white font-montserrat font-bold">
-            Velkommen
-          </div>
-          <div className="flex flex-col items-start justify-center m-6">
-            <div className="text-2xl text-white font-montserrat m-2">
-              Her vil du kunne læse mere om vores hus i <span className="underline decoration-[#D56C33]">Blyde Wildlife Estate</span>
-            </div>
-            <div className="text-2xl text-white font-montserrat m-2">
-              Hvis du er interesseret I at høre mere skal du endelig bare <Link className="underline" to='/kontakt'>kontakte os</Link>.
+      </div>
+
+      <div className="relative">
+        <div className="mx-auto sm:px-8 lg:px-12 max-w-7xl">
+          <div className="max-w-xl mx-auto text-center">
+            <h1 className="tracking-tighter text-white">
+              <span className="text-3xl font-montserrat font-light sm:text-7xl">
+                Moderne
+              </span>
+              <br />
+              <span className="text-4xl font-serif italic font-normal sm:text-8xl">
+                Afrikansk luksus
+              </span>
+            </h1>
+            <p className="sm:mt-5 p-5 font-sans text-base font-normal text-white text-opacity-70">
+              Lækkert moderne hus belliggende i Blyde Wildlife Estate, i
+              Sydafrika. Huset er igennem de sidste 13 år løbende vedligeholdt
+              og seneste opgradering og udvidelse af køkken og spiseafdeling er
+              fra 2021. Da vi desværre har andet af se til, og derfor ikke kan
+              bruge det hele tiden, vil vi gerne låne det ud til venner og
+              familie.
+            </p>
+            <div className="flex items-center justify-center mt-8 space-x-3 sm:space-x-4">
+              <Link
+                to="/om-huset"
+                title=""
+                className="
+                            inline-flex
+                            items-center
+                            justify-center
+                            px-5
+                            py-2
+                            font-sans
+                            text-base
+                            font-semibold
+                            leading-6
+                            transition-all
+                            duration-200
+                            border-2 border-transparent
+                            rounded-full
+                            sm:leading-8
+                            bg-white
+                            sm:text-lg
+                            text-black
+                            hover:bg-opacity-90
+                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-secondary
+                        "
+                role="button"
+              >
+                Læs mere om huset
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
 

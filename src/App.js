@@ -1,18 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {Home, Navbar, Gallery, Kontakt, OmHuset, Footer} from "./components";
+import { Home, Navbar, Gallery, Kontakt, OmHuset, Error } from "./components";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <Router basename="/sydafrika">
       <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path='/om-huset' element={<OmHuset/> } />
-        <Route path='/billeder' element={<Gallery/>} />
-        <Route path='/kontakt' element={<Kontakt/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/om-huset" element={[<OmHuset />, <Navbar />]} />
+        <Route path="/billeder" element={[<Gallery />, <Navbar />]} />
+        <Route path="/kontakt" element={[<Kontakt />, <Navbar />]} />
+        <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }
